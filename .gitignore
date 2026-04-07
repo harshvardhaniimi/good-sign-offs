@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.DS_Store
+netlify/
+.signoffs-bilingual-cache.json
+.signoffs-bilingual-full.js
+.signoffs-bilingual-full.json

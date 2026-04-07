@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Good Sign-Offs / अच्छी विदाइयाँ</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Mukta:wght@300;400;600&family=Source+Serif+4:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f0e8;
+  --fg: #1a1a18;
+  --accent: #c45d3e;
+  --accent-soft: #e8a88e;
+  --muted: #8a8478;
+  --card-bg: #fffcf5;
+  --card-border: #e0d8c8;
+  --hindi-accent: #2e6b5e;
+  --hindi-soft: #a3d4c7;
+  --shadow: rgba(26, 26, 24, 0.07);
+  --radius: 6px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Source Serif 4', Georgia, serif;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+header {
+  padding: 3.5rem 2rem 2.3rem;
+  text-align: center;
+  border-bottom: 1px solid var(--card-border);
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.4rem;
+}
+
+header h1 .hindi-title {
+  font-family: 'Mukta', sans-serif;
+  font-weight: 300;
+  color: var(--hindi-accent);
+  font-size: 0.85em;
+}
+
+header .subtitle {
+  color: var(--muted);
+  font-size: 1.05rem;
+  font-style: italic;
+  max-width: 580px;
+  margin: 0.6rem auto 0;
+}
+
+header .credit {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-top: 1rem;
+  line-height: 1.6;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header .credit a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+header .credit a:hover { text-decoration: underline; }
+
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem;
+  border-bottom: 1px solid var(--card-border);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav button {
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.95rem;
+  background: none;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  cursor: pointer;
+  color: var(--muted);
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+nav button:hover { color: var(--fg); }
+nav button.active {
+  color: var(--fg);
+  border-bottom-color: var(--accent);
+}
+
+.randomizer {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 4rem 2rem 3rem;
+  text-align: center;
+  min-height: 58vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.signoff-display {
+  min-height: 270px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.lang-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+}
+
+.signoff-text,
+.signoff-secondary {
+  max-width: 680px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.signoff-text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.7rem, 4.6vw, 2.55rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--fg);
+}
+
+.signoff-text.hindi,
+.signoff-secondary.hindi {
+  font-family: 'Mukta', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--hindi-accent);
+}
+
+.signoff-text.hindi {
+  font-size: clamp(2rem, 5.8vw, 3.15rem);
+  line-height: 1.4;
+}
+
+.signoff-secondary {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 1.08rem;
+  font-style: italic;
+}
+
+.signoff-secondary.hindi {
+  font-size: 1.45rem;
+  line-height: 1.45;
+}
+
+.signoff-meta {
+  margin-top: 1rem;
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+
+.fade-in {
+  animation: fadeSlideIn 320ms ease both;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.actions {
+  margin-top: 2.4rem;
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.88rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  color: var(--fg);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn:hover {
+  border-color: var(--accent);
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.btn.primary:hover { background: #b5523a; }
+
+.btn.hindi-btn {
+  border-color: var(--hindi-accent);
+  color: var(--hindi-accent);
+}
+
+.btn.hindi-btn:hover {
+  background: var(--hindi-accent);
+  color: #fff;
+}
+
+.loading-progress {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin-top: 1rem;
+  transition: opacity 0.5s;
+}
+
+.list-section {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 2rem 4rem;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.82rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  border: 1px solid var(--card-border);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.filter-btn:hover {
+  color: var(--fg);
+  border-color: var(--muted);
+}
+
+.filter-btn.active {
+  background: var(--fg);
+  color: var(--bg);
+  border-color: var(--fg);
+}
+
+.list-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.count-info {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.download-link {
+  font-size: 0.8rem;
+  color: var(--accent);
+  text-decoration: none;
+  cursor: pointer;
+  border-bottom: 1px dotted var(--accent);
+}
+
+.download-link:hover { border-bottom-style: solid; }
+
+.signoff-card {
+  padding: 1.15rem 1.2rem;
+  border-bottom: 1px solid var(--card-border);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  transition: background 0.15s;
+}
+
+.signoff-card:first-child { border-top: 1px solid var(--card-border); }
+.signoff-card:hover { background: var(--card-bg); }
+
+.card-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.08rem;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+.card-text.hindi,
+.card-secondary.hindi {
+  font-family: 'Mukta', sans-serif;
+  font-style: normal;
+  color: var(--hindi-accent);
+}
+
+.card-text.hindi { font-size: 1.4rem; }
+
+.card-secondary {
+  margin-top: 0.45rem;
+  color: var(--muted);
+  font-size: 0.96rem;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+.card-secondary.hindi {
+  font-size: 1.16rem;
+  font-style: normal;
+}
+
+.card-source {
+  margin-top: 0.55rem;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.card-right {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.source-tag {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 0.2rem 0.45rem;
+}
+
+.mini-copy {
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.72rem;
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  cursor: pointer;
+  color: var(--fg);
+}
+
+.mini-copy:hover {
+  border-color: var(--accent);
+  box-shadow: 0 2px 6px var(--shadow);
+}
+
+.mini-copy.hindi {
+  border-color: var(--hindi-accent);
+  color: var(--hindi-accent);
+}
+
+.list-actions {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.8rem;
+}
+
+.copied-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--fg);
+  color: var(--bg);
+  padding: 0.55rem 1.3rem;
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 200;
+}
+
+.copied-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.hidden { display: none !important; }
+
+@media (max-width: 640px) {
+  header { padding: 2.2rem 1.2rem 1.6rem; }
+  .randomizer { padding: 3rem 1.2rem 2.5rem; }
+  .list-section { padding: 1.5rem 1.2rem 3rem; }
+  nav button { padding: 0.75rem 1rem; font-size: 0.85rem; }
+  .signoff-card { flex-direction: column; }
+  .card-right { width: 100%; justify-content: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Good Sign-Offs <span class="hindi-title">/ अच्छी विदाइयाँ</span></h1>
+  <p class="subtitle">Warm, witty, and poetic ways to end an email, in English and Hindi.</p>
+  <p class="credit">
+    English sign-offs from <a href="https://www.are.na/meg-miller/good-sign-offs" target="_blank" rel="noreferrer">Meg Miller's Are.na channel</a> and its hundreds of contributors.<br>
+    Hindi originals and translations by <a href="https://www.harsh17.in" target="_blank" rel="noreferrer">Harsh</a>.
+  </p>
+</header>
+
+<nav>
+  <button class="active" data-tab="random">Randomizer</button>
+  <button data-tab="list">Browse All</button>
+</nav>
+
+<section class="randomizer" id="random-section">
+  <div class="signoff-display">
+    <span class="lang-badge" id="signoff-lang">Loading</span>
+    <p class="signoff-text" id="signoff-primary">Loading sign-offs...</p>
+    <p class="signoff-secondary hidden" id="signoff-secondary"></p>
+    <p class="signoff-meta hidden" id="signoff-meta"></p>
+  </div>
+  <div class="actions">
+    <button class="btn primary" id="shuffle-btn">Another one</button>
+    <button class="btn" id="copy-en-btn">Copy English</button>
+    <button class="btn hindi-btn" id="copy-hi-btn">Copy Hindi</button>
+  </div>
+  <p class="loading-progress" id="loading-progress"></p>
+</section>
+
+<section class="list-section hidden" id="list-section">
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="translations">Translations</button>
+    <button class="filter-btn" data-filter="originals">Hindi Originals</button>
+  </div>
+  <div class="list-meta">
+    <span class="count-info" id="count-info"></span>
+    <a class="download-link" id="download-md" title="Download the full bilingual markdown collection">Download full list (.md)</a>
+  </div>
+  <div id="signoff-list"></div>
+  <div class="list-actions">
+    <button class="btn hidden" id="load-more-btn">Show more</button>
+  </div>
+</section>
+
+<div class="copied-toast" id="toast">Copied to clipboard</div>
+
+<script src="./signoffs-bilingual.js"></script>
+<script>
+const DATA_URL = './signoffs-bilingual.json';
+const LIST_PAGE_SIZE = 120;
+
+const HINDI_ORIGINALS = [
+  { hi: "आम की फाँक और छत पर बारिश,", en: "Mango slices and rain on the terrace," },
+  { hi: "चाय ठंडी हो उससे पहले कोई अच्छी बात,", en: "A good word before the tea goes cold," },
+  { hi: "धूप में सूखती चादरों जैसी शांति,", en: "Peace like bedsheets drying in the sun," },
+  { hi: "पुरानी किताब के बीच मिला हुआ पत्ता,", en: "A leaf found pressed inside an old book," },
+  { hi: "गंगा किनारे शाम की आरती और चुप्पी,", en: "Evening aarti by the Ganga, and silence," },
+  { hi: "मिट्टी की पहली बारिश वाली खुशबू,", en: "The first-rain smell of earth," },
+  { hi: "नानी के हाथ का अचार और उनकी डाँट,", en: "Grandmother's pickle and her scolding," },
+  { hi: "बरामदे में पंखे की आवाज़ और दोपहर की नींद,", en: "The fan in the veranda and an afternoon nap," },
+  { hi: "रेलगाड़ी की खिड़की और अजनबी शहर,", en: "A train window and an unfamiliar city," },
+  { hi: "कुल्हड़ वाली चाय और प्लेटफ़ॉर्म का शोर,", en: "Kulhad chai and the noise of the platform," },
+  { hi: "ऊपर चाँद, नीचे चप्पल, बीच में ज़िंदगी,", en: "Moon above, slippers below, life in between," },
+  { hi: "पीपल की छाँव और कहीं नहीं जाना,", en: "Shade of a peepal tree and nowhere to go," },
+  { hi: "दीये की लौ और माँ की आवाज़,", en: "A diya's flame and mother's voice," },
+  { hi: "सब्ज़ीवाले की आवाज़ से शुरू होती सुबह,", en: "A morning that begins with the sabziwala's call," },
+  { hi: "मंदिर की घंटी और गली का सन्नाटा,", en: "Temple bell and the quiet of the lane," },
+  { hi: "अगरबत्ती और पापा की अलमारी,", en: "Incense and father's cupboard," },
+  { hi: "छत पर सोना और तारे गिनना,", en: "Sleeping on the roof and counting stars," },
+  { hi: "आँवले का मुरब्बा और दादा की कहानी,", en: "Amla murabba and grandfather's story," },
+  { hi: "जलेबी गरम, रिश्ते नरम,", en: "Jalebi hot, bonds soft," },
+  { hi: "बस इतना — कि ठीक रहो।", en: "Just this — that you stay well." },
+  { hi: "गुलमोहर के नीचे पाँच मिनट और,", en: "Five more minutes under the gulmohar," },
+  { hi: "किसी पुरानी फ़िल्म का गाना और रिक्शे की सवारी,", en: "An old film song and a rickshaw ride," },
+  { hi: "ठंडे पानी का मटका और गर्मी की दोपहर,", en: "A clay pot of cool water and a summer afternoon," },
+  { hi: "पतंग की डोर और छत से दिखता आसमान,", en: "Kite string and the sky from the rooftop," },
+  { hi: "समोसे की गरमाहट और बारिश का इंतज़ार,", en: "The warmth of a samosa and waiting for rain," },
+  { hi: "चिट्ठी लिखने जैसा सुकून,", en: "The peace of writing a letter," },
+  { hi: "हवा में गूँजती अज़ान और शाम का रंग,", en: "The azaan in the breeze and the colour of evening," },
+  { hi: "नदी किनारे बैठकर कुछ न सोचना,", en: "Sitting by the river, thinking of nothing," },
+  { hi: "चूड़ी की खनक और त्योहार की सुबह,", en: "The clink of bangles and a festival morning," },
+  { hi: "लस्सी का गिलास और दादी का आँगन,", en: "A glass of lassi and grandmother's courtyard," },
+  { hi: "पुरानी दीवार पर उगी हुई बेल,", en: "A vine growing on an old wall," },
+  { hi: "बचपन की गली और अँधेरे में लुकाछिपी,", en: "The lane of childhood and hide-and-seek in the dark," },
+  { hi: "रात की ट्रेन और खिड़की से आती हवा,", en: "A night train and the wind through the window," },
+  { hi: "मालपुए और माँ की रसोई,", en: "Malpua and mother's kitchen," },
+  { hi: "तुलसी के पौधे पर सुबह का पानी,", en: "Morning water on the tulsi plant," },
+  { hi: "हल्दी वाला दूध और किसी का ख़याल,", en: "Haldi milk and being thought of," },
+  { hi: "खटिया पर लेटकर सुनी जाने वाली कहानियाँ,", en: "Stories heard lying on a cot," },
+  { hi: "इत्र, धूप, और पुराना संदूक,", en: "Perfume, incense, and an old trunk," },
+  { hi: "जितना मिले उतना काफ़ी,", en: "Whatever comes is enough," },
+  { hi: "चलो, फिर मिलते हैं कहीं,", en: "Well then, we'll meet somewhere," }
+];
+
+let bilingualRaw = [];
+let translatedSignoffs = [];
+let skippedSignoffs = [];
+let originalSignoffs = [];
+let currentFilter = 'all';
+let currentSignoff = null;
+let renderedListItems = [];
+let visibleCount = LIST_PAGE_SIZE;
+
+const randomSection = document.getElementById('random-section');
+const listSection = document.getElementById('list-section');
+const primaryEl = document.getElementById('signoff-primary');
+const secondaryEl = document.getElementById('signoff-secondary');
+const metaEl = document.getElementById('signoff-meta');
+const langEl = document.getElementById('signoff-lang');
+const progressEl = document.getElementById('loading-progress');
+const shuffleBtn = document.getElementById('shuffle-btn');
+const copyEnBtn = document.getElementById('copy-en-btn');
+const copyHiBtn = document.getElementById('copy-hi-btn');
+const toast = document.getElementById('toast');
+const countEl = document.getElementById('count-info');
+const listEl = document.getElementById('signoff-list');
+const loadMoreBtn = document.getElementById('load-more-btn');
+const downloadLink = document.getElementById('download-md');
+
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+function textToHtml(text) {
+  return escapeHtml(text).replace(/\n/g, '<br>');
+}
+
+function formatDate(dateValue) {
+  if (!dateValue) return '';
+  const date = new Date(dateValue);
+  if (Number.isNaN(date.getTime())) return '';
+  return new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric'
+  }).format(date);
+}
+
+function formatMarkdownDate(dateValue) {
+  if (!dateValue) return '—';
+  const date = new Date(dateValue);
+  if (Number.isNaN(date.getTime())) return dateValue;
+  return date.toISOString().replace('.000Z', 'Z');
+}
+
+function escapeMarkdownCell(text) {
+  return String(text || '—')
+    .replace(/\|/g, '\\|')
+    .replace(/\r?\n/g, '<br>')
+    .replace(/\u00a0/g, ' ');
+}
+
+function showToast(message) {
+  toast.textContent = message || 'Copied to clipboard';
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 1600);
+}
+
+function copyText(text, label) {
+  if (!text) return;
+  navigator.clipboard.writeText(text).then(() => {
+    showToast(label ? `Copied ${label}` : 'Copied to clipboard');
+  }).catch(() => {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+    showToast(label ? `Copied ${label}` : 'Copied to clipboard');
+  });
+}
+
+function buildCollections(records) {
+  bilingualRaw = records;
+  translatedSignoffs = records
+    .filter((record) => record && record.translatable && typeof record.hi === 'string' && record.hi.trim())
+    .map((record, index) => ({
+      id: `translation-${index + 1}`,
+      kind: 'translation',
+      en: record.en,
+      hi: record.hi,
+      contributor: record.contributor || 'Unknown contributor',
+      date: record.date || null
+    }));
+
+  skippedSignoffs = records.filter((record) => !record || !record.translatable || !record.hi);
+
+  originalSignoffs = HINDI_ORIGINALS.map((record, index) => ({
+    id: `original-${index + 1}`,
+    kind: 'original',
+    en: record.en,
+    hi: record.hi,
+    contributor: 'Harsh',
+    date: null
+  }));
+}
+
+function applyDataset(records, sourceLabel) {
+  if (!Array.isArray(records)) throw new Error('Dataset must be an array');
+
+  buildCollections(records);
+  renderList();
+  showRandom();
+
+  const sourceNote = sourceLabel ? ` from ${sourceLabel}` : '';
+  const skippedNote = skippedSignoffs.length
+    ? ` ${skippedSignoffs.length} source entries stay in the markdown download only.`
+    : '';
+  progressEl.textContent = `Loaded ${translatedSignoffs.length} translated sign-offs and ${originalSignoffs.length} Hindi originals${sourceNote}.${skippedNote}`;
+  setTimeout(() => { progressEl.style.opacity = '0'; }, 5000);
+}
+
+function getDisplaySignoffs() {
+  return [...originalSignoffs, ...translatedSignoffs];
+}
+
+function getFilteredListItems() {
+  if (currentFilter === 'translations') return translatedSignoffs;
+  if (currentFilter === 'originals') return originalSignoffs;
+  return getDisplaySignoffs();
+}
+
+function buildRandomView(item) {
+  if (item.kind === 'original') {
+    return {
+      primaryText: item.hi,
+      primaryLang: 'hi',
+      secondaryText: item.en,
+      secondaryLang: 'en',
+      badge: 'Hindi original',
+      meta: 'Original Hindi sign-off by Harsh'
+    };
+  }
+
+  const primaryLang = Math.random() < 0.5 ? 'en' : 'hi';
+  const secondaryLang = primaryLang === 'en' ? 'hi' : 'en';
+  const metaParts = [];
+  if (item.contributor) metaParts.push(`Added by ${item.contributor}`);
+  if (item.date) metaParts.push(formatDate(item.date));
+
+  return {
+    primaryText: item[primaryLang],
+    primaryLang,
+    secondaryText: item[secondaryLang],
+    secondaryLang,
+    badge: primaryLang === 'en' ? 'English first' : 'Hindi first',
+    meta: metaParts.join(' · ')
+  };
+}
+
+function animateElement(element) {
+  element.classList.remove('fade-in');
+  void element.offsetWidth;
+  element.classList.add('fade-in');
+}
+
+function renderCurrentSignoff(item) {
+  const view = buildRandomView(item);
+  currentSignoff = item;
+
+  langEl.textContent = view.badge;
+  primaryEl.textContent = view.primaryText;
+  primaryEl.className = `signoff-text ${view.primaryLang === 'hi' ? 'hindi' : ''}`.trim();
+  animateElement(primaryEl);
+
+  secondaryEl.textContent = view.secondaryText;
+  secondaryEl.className = `signoff-secondary ${view.secondaryLang === 'hi' ? 'hindi' : ''}`.trim();
+  secondaryEl.classList.remove('hidden');
+  animateElement(secondaryEl);
+
+  if (view.meta) {
+    metaEl.textContent = view.meta;
+    metaEl.classList.remove('hidden');
+  } else {
+    metaEl.classList.add('hidden');
+  }
+}
+
+function showRandom() {
+  const items = getDisplaySignoffs();
+  if (!items.length) return;
+
+  let next = items[Math.floor(Math.random() * items.length)];
+  if (currentSignoff && items.length > 1) {
+    while (next.id === currentSignoff.id) {
+      next = items[Math.floor(Math.random() * items.length)];
+    }
+  }
+  renderCurrentSignoff(next);
+}
+
+function renderList() {
+  const items = getFilteredListItems();
+  const shown = Math.min(visibleCount, items.length);
+  renderedListItems = items.slice(0, shown);
+  const segments = [
+    `${shown} of ${items.length} displayable sign-offs`,
+    `${translatedSignoffs.length} translated pairs`,
+    `${originalSignoffs.length} originals`
+  ];
+  if (skippedSignoffs.length) {
+    segments.push(`${skippedSignoffs.length} skipped from the UI but kept in the download`);
+  }
+  countEl.textContent = segments.join(' · ');
+
+  listEl.innerHTML = renderedListItems.map((item, index) => {
+    const primaryText = item.kind === 'original' ? item.hi : item.en;
+    const primaryLang = item.kind === 'original' ? 'hi' : 'en';
+    const secondaryText = item.kind === 'original' ? item.en : item.hi;
+    const secondaryLang = item.kind === 'original' ? 'en' : 'hi';
+    const sourceLine = item.kind === 'original'
+      ? 'Original Hindi sign-off by Harsh'
+      : `Added by ${escapeHtml(item.contributor || 'Unknown contributor')}${item.date ? ` · ${escapeHtml(formatDate(item.date))}` : ''}`;
+
+    return `
+      <article class="signoff-card" data-index="${index}">
+        <div class="card-main">
+          <div class="card-text ${primaryLang === 'hi' ? 'hindi' : ''}">${textToHtml(primaryText)}</div>
+          <div class="card-secondary ${secondaryLang === 'hi' ? 'hindi' : ''}">${textToHtml(secondaryText)}</div>
+          <div class="card-source">${sourceLine}</div>
+        </div>
+        <div class="card-right">
+          <span class="source-tag">${item.kind === 'original' ? 'Original' : 'Translation'}</span>
+          <button class="mini-copy" type="button" data-copy-lang="en">EN</button>
+          <button class="mini-copy hindi" type="button" data-copy-lang="hi">HI</button>
+        </div>
+      </article>
+    `;
+  }).join('');
+
+  loadMoreBtn.classList.toggle('hidden', shown >= items.length);
+}
+
+function generateMarkdown() {
+  const now = new Date();
+  const filenameDate = now.toISOString().split('T')[0];
+  const headerDate = new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  }).format(now);
+
+  let markdown = `# Good Sign-Offs / अच्छी विदाइयाँ — ${headerDate}\n\n`;
+  markdown += `> English sign-offs sourced from [Meg Miller's Are.na channel](https://www.are.na/meg-miller/good-sign-offs) and its hundreds of contributors.\n`;
+  markdown += `> Hindi originals and translations by [Harsh](https://www.harsh17.in).\n\n`;
+  markdown += `Generated on ${headerDate}. Published collection: ${translatedSignoffs.length} translated sign-offs + ${originalSignoffs.length} Hindi originals. The section below includes all ${bilingualRaw.length} bilingual entries currently shipped with the site.\n\n`;
+  markdown += `## Hindi Originals / हिन्दी मूल (${originalSignoffs.length})\n\n`;
+  markdown += `| English | Hindi | Contributor | Date |\n`;
+  markdown += `| --- | --- | --- | --- |\n`;
+  originalSignoffs.forEach((item) => {
+    markdown += `| ${escapeMarkdownCell(item.en)} | ${escapeMarkdownCell(item.hi)} | Harsh | — |\n`;
+  });
+
+  markdown += `\n## Published Bilingual Collection (${bilingualRaw.length})\n\n`;
+  markdown += `| English | Hindi | Contributor | Date |\n`;
+  markdown += `| --- | --- | --- | --- |\n`;
+  bilingualRaw.forEach((item) => {
+    markdown += `| ${escapeMarkdownCell(item.en)} | ${escapeMarkdownCell(item.hi)} | ${escapeMarkdownCell(item.contributor || '—')} | ${escapeMarkdownCell(formatMarkdownDate(item.date))} |\n`;
+  });
+
+  const blob = new Blob([markdown], { type: 'text/markdown;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const anchor = document.createElement('a');
+  anchor.href = url;
+  anchor.download = `good-sign-offs-${filenameDate}.md`;
+  document.body.appendChild(anchor);
+  anchor.click();
+  document.body.removeChild(anchor);
+  URL.revokeObjectURL(url);
+}
+
+async function loadDataset() {
+  progressEl.textContent = 'Loading bilingual collection...';
+  const preloadedData = Array.isArray(window.SIGNOFFS_DATA) ? window.SIGNOFFS_DATA : null;
+
+  try {
+    if (window.location.protocol === 'file:' && preloadedData) {
+      applyDataset(preloadedData, 'the local JS sidecar');
+      return;
+    }
+
+    const response = await fetch(DATA_URL, { cache: 'no-store' });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data = await response.json();
+    applyDataset(data, 'signoffs-bilingual.json');
+  } catch (error) {
+    if (preloadedData) {
+      console.warn('Could not load signoffs-bilingual.json, using preloaded JS dataset instead:', error);
+      applyDataset(preloadedData, 'the JS sidecar');
+      return;
+    }
+
+    console.warn('Could not load signoffs-bilingual.json or signoffs-bilingual.js:', error);
+    langEl.textContent = 'Data missing';
+    primaryEl.textContent = 'Could not load the sign-off dataset.';
+    primaryEl.className = 'signoff-text';
+    secondaryEl.textContent = 'Keep signoffs-bilingual.json and signoffs-bilingual.js next to sign-offs.html.';
+    secondaryEl.className = 'signoff-secondary';
+    secondaryEl.classList.remove('hidden');
+    metaEl.classList.add('hidden');
+    progressEl.textContent = 'Neither dataset sidecar could be loaded.';
+  }
+}
+
+shuffleBtn.addEventListener('click', showRandom);
+
+copyEnBtn.addEventListener('click', () => {
+  if (!currentSignoff) return;
+  copyText(currentSignoff.en, 'English');
+});
+
+copyHiBtn.addEventListener('click', () => {
+  if (!currentSignoff) return;
+  copyText(currentSignoff.hi, 'Hindi');
+});
+
+downloadLink.addEventListener('click', (event) => {
+  event.preventDefault();
+  generateMarkdown();
+});
+
+loadMoreBtn.addEventListener('click', () => {
+  visibleCount += LIST_PAGE_SIZE;
+  renderList();
+});
+
+document.querySelectorAll('nav button').forEach((button) => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('nav button').forEach((navButton) => navButton.classList.remove('active'));
+    button.classList.add('active');
+    const tab = button.dataset.tab;
+    randomSection.classList.toggle('hidden', tab !== 'random');
+    listSection.classList.toggle('hidden', tab !== 'list');
+  });
+});
+
+document.querySelectorAll('.filter-btn').forEach((button) => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach((filterButton) => filterButton.classList.remove('active'));
+    button.classList.add('active');
+    currentFilter = button.dataset.filter;
+    visibleCount = LIST_PAGE_SIZE;
+    renderList();
+  });
+});
+
+listEl.addEventListener('click', (event) => {
+  const copyButton = event.target.closest('[data-copy-lang]');
+  if (!copyButton) return;
+
+  const card = copyButton.closest('.signoff-card');
+  if (!card) return;
+
+  const item = renderedListItems[Number(card.dataset.index)];
+  if (!item) return;
+
+  const lang = copyButton.dataset.copyLang;
+  copyText(item[lang], lang === 'hi' ? 'Hindi' : 'English');
+});
+
+document.addEventListener('keydown', (event) => {
+  const target = event.target;
+  const tagName = target && target.tagName ? target.tagName.toLowerCase() : '';
+  if (tagName === 'input' || tagName === 'textarea') return;
+  if (event.code === 'Space' || event.code === 'ArrowRight') {
+    event.preventDefault();
+    showRandom();
+  }
+});
+
+loadDataset();
+</script>
+</body>
+</html>
