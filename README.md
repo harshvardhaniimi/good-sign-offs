@@ -23,10 +23,6 @@ The English sign-offs are pulled live from the Are.na API — a crowd-sourced co
 - **Copy to clipboard** — one tap to copy either language
 - **Download** — export all sign-offs as a Markdown file with credits
 
-## Try it
-
-Open `sign-offs.html` in your browser. That's it — no build step, no dependencies, no framework.
-
 ## How it's built
 
 - Single HTML file with embedded CSS and JavaScript
