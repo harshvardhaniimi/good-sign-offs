@@ -7,6 +7,8 @@ A bilingual collection of poetic, warm, and witty ways to end your emails.
 
 > 2,100+ English sign-offs from [Meg Miller's Are.na channel](https://www.are.na/meg-miller/good-sign-offs) and 40+ original Hindi sign-offs.
 
+Check out the awesome collection of email sign-offs at [https://signoffs.netlify.app/](https://signoffs.netlify.app/)
+
 ## What is this?
 
 A single-page website that serves as both a randomizer and a browsable collection of email sign-offs. Open it, click a button, and get a beautiful way to end your next email.
