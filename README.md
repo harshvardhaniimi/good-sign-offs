@@ -1,5 +1,8 @@
 # Good Sign-Offs / अच्छी विदाइयाँ
 
+<img width="1154" height="769" alt="image" src="https://github.com/user-attachments/assets/51e2e00b-d8bb-4eed-9fb1-7d1da7b38718" />
+
+
 A bilingual collection of poetic, warm, and witty ways to end your emails.
 
 > 2,100+ English sign-offs from [Meg Miller's Are.na channel](https://www.are.na/meg-miller/good-sign-offs) and 40+ original Hindi sign-offs.
